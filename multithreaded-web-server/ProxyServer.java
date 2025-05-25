@@ -11,7 +11,7 @@ public class ProxyServer {
     private final int targetPort;
 
     public ProxyServer(int proxyPort, String targetHost, int targetPort) {
-        this.threadPool = Executors.newFixedThreadPool(10); // Better control over load
+        this.threadPool = Executors.newFixedThreadPool(10);
         this.proxyPort = proxyPort;
         this.targetHost = targetHost;
         this.targetPort = targetPort;
