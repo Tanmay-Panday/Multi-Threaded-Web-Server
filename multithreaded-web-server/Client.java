@@ -19,7 +19,10 @@ public class Client {
 
                 String line;
                 while ((line = fromSocket.readLine()) != null) {
-                    System.out.println("Client " + clientId + " received: " + line);
+                    // Suppress or selectively log
+                    if (line.contains("200 OK")) {
+                        System.out.println("Client " + clientId + " received status: " + line);
+                    }
                 }
 
             } catch (ConnectException e) {

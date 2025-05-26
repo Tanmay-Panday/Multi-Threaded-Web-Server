@@ -31,17 +31,16 @@ public class Server {
             StringBuilder request = new StringBuilder();
             String line;
 
-            // Read HTTP request headers
             while ((line = in.readLine()) != null && !line.isEmpty()) {
                 request.append(line).append("\n");
             }
 
             System.out.println("Received Request:\n" + request);
 
-            // Simulated response content (could be JSON/HTML/etc.)
-            String responseBody = "<html><body><h1>Hello from Server</h1></body></html>";
+            // Plain text response
+            String responseBody = "Hello from Server";
             String httpResponse = "HTTP/1.1 200 OK\r\n"
-                    + "Content-Type: text/html\r\n"
+                    + "Content-Type: text/plain\r\n"
                     + "Content-Length: " + responseBody.length() + "\r\n"
                     + "Connection: close\r\n"
                     + "\r\n"
